@@ -1,0 +1,15 @@
+name: Update gist with Todoist stats
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Update gist
+        uses: yg/todoist-box@master
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          TODOIST_API_KEY: ${{ secrets.TODOIST_API_KEY }}
