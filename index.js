@@ -13,7 +13,7 @@ const octokit = new Octokit({ auth: `token ${githubToken}` });
 
 async function main() {
   const stats = await axios(
-    `https://api.todoist.com/sync/v8.3/completed/get_stats?token=${todoistApiKey}`
+    `https://api.todoist.com/sync/v8.6/completed/get_stats?token=${todoistApiKey}`
   );
   await updateGist(stats.data);
 }
@@ -33,16 +33,12 @@ async function updateGist(data) {
   lines.push(karmaPoint.join(" "));
 
   const dailyGoal = [
-    `🌞 Completed ${days_items[0].total_completed.toString()} tasks out of ${
-      goals.daily_goal
-    } today`,
+    `🌞 Completed ${days_items[0].total_completed.toString()} tasks today`,
   ];
   lines.push(dailyGoal.join(" "));
 
   const weeklyGoal = [
-    `📅 Completed ${week_items[0].total_completed.toString()} tasks out of ${
-      goals.weekly_goal
-    } this week`,
+    `📅 Completed ${week_items[0].total_completed.toString()} tasks this week`,
   ];
   lines.push(weeklyGoal.join(" "));
 
