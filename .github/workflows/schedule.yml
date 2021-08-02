@@ -7,7 +7,7 @@ on:
     branches: master
 
 jobs:
-  update-gist:
+  update-gist: 
     runs-on: macos-latest
 
     steps:
