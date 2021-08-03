@@ -60,7 +60,7 @@ async function updateGist(data) {
       gist_id: gistId,
       files: {
         [filename]: {
-          filename: `✅ Todoist Stats`,
+          filename: `✅ Todoist Stats.bat`,
           content: lines.join("\n"),
         },
       },
