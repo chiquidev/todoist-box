@@ -2,7 +2,7 @@ name: Todoist Box
 
 on:
   schedule:
-    - cron:  "*/45 * * * *"
+    - cron:  "*/45 * * * *" 
   push:
     branches: master
 
